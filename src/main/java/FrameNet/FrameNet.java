@@ -9,13 +9,13 @@ public class FrameNet {
     private ArrayList<Frame> frames;
 
     /**
-     * A constructor of {@link FrameNet} class which reads all frame files inside the files.txt file. For each
+     * A constructor of {@link FrameNet} class which reads all frame files inside the files2.txt file. For each
      * filename inside that file, the constructor creates a FrameNet.Frame and puts in inside the frames {@link ArrayList}.
      */
     public FrameNet(){
         frames = new ArrayList<Frame>();
         ClassLoader classLoader = ClassLoader.getSystemClassLoader();
-        InputStream inputStream = classLoader.getResourceAsStream("files.txt");
+        InputStream inputStream = classLoader.getResourceAsStream("files2.txt");
         Scanner scanner = new Scanner(inputStream);
         while (scanner.hasNext()){
             String fileName = scanner.next();
