@@ -19,6 +19,7 @@ public class Frame {
     /**
      * Constructor of {@link Frame} class which takes inputStream as input and reads the frame
      *
+     * @param name  Name of the frame
      * @param inputStream  inputStream to read frame
      */
     public Frame(String name, InputStream inputStream){
@@ -35,6 +36,24 @@ public class Frame {
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public boolean lexicalUnitExists(String synSetId){
+        for (LexicalUnit lexicalUnit : lexicalUnits){
+            if (lexicalUnit.getSynSetId().equals(synSetId)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public LexicalUnit getLexicalUnitWithId(String synSetId){
+        for (LexicalUnit lexicalUnit : lexicalUnits){
+            if (lexicalUnit.getSynSetId().equals(synSetId)){
+                return lexicalUnit;
+            }
+        }
+        return null;
     }
 
     public LexicalUnit getLexicalUnit(int index){

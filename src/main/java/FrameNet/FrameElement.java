@@ -3,6 +3,7 @@ package FrameNet;
 public class FrameElement {
 
     private String frameElementType;
+    private String frame;
     private String id;
 
     /**
@@ -15,7 +16,8 @@ public class FrameElement {
     public FrameElement(String frameElement){
         if (frameElement.contains("$")){
             frameElementType = frameElement.substring(0, frameElement.indexOf("$"));
-            id = frameElement.substring(frameElement.indexOf("$") + 1);
+            frame = frameElement.substring(frameElement.indexOf("$") + 1, frameElement.lastIndexOf("$"));
+            id = frameElement.substring(frameElement.lastIndexOf("$") + 1);
         } else {
             frameElementType = "NONE";
         }
@@ -25,10 +27,12 @@ public class FrameElement {
      * Another constructor of {@link FrameElement} class which takes frameElementType and id as inputs and initializes corresponding attributes
      *
      * @param frameElementType  Type of the frameElement
+     * @param frame  Frame of the frameElement
      * @param id  Id of the frameElement
      */
-    public FrameElement(String frameElementType, String id){
+    public FrameElement(String frameElementType, String frame, String id){
         this.frameElementType = frameElementType;
+        this.frame = frame;
         this.id = id;
     }
 
@@ -39,6 +43,15 @@ public class FrameElement {
      */
     public String getFrameElementType(){
         return frameElementType;
+    }
+
+    /**
+     * Accessor for frame.
+     *
+     * @return frame.
+     */
+    public String getFrame(){
+        return frame;
     }
 
     /**
@@ -60,7 +73,7 @@ public class FrameElement {
         if (frameElementType.equals("NONE")){
             return frameElementType;
         } else {
-            return frameElementType + "$" + id;
+            return frameElementType + "$" + frame + "$" + id;
         }
     }
 

@@ -22,6 +22,10 @@ public class LexicalUnit {
         }
     }
 
+    public String getSynSetId(){
+        return synSetId;
+    }
+
     public int size(){
         return frameElements.size();
     }

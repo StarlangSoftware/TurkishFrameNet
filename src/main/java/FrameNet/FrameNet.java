@@ -23,6 +23,25 @@ public class FrameNet {
         }
     }
 
+    public boolean lexicalUnitExists(String synSetId){
+        for (Frame frame : frames){
+            if (frame.lexicalUnitExists(synSetId)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public ArrayList<Frame> getFrames(String synSetId){
+        ArrayList<Frame> result = new ArrayList<>();
+        for (Frame frame : frames){
+            if (frame.lexicalUnitExists(synSetId)){
+                result.add(frame);
+            }
+        }
+        return result;
+    }
+
     public int size(){
         return frames.size();
     }
