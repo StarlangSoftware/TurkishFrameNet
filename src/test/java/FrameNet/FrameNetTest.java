@@ -11,7 +11,7 @@ public class FrameNetTest {
 
     @Test
     public void testFrameSize() {
-        assertEquals(131, frameNet.size());
+        assertEquals(139, frameNet.size());
     }
 
     @Test
@@ -20,7 +20,7 @@ public class FrameNetTest {
         for (int i = 0; i < frameNet.size(); i++){
             count += frameNet.getFrame(i).size();
         }
-        assertEquals(2262, count);
+        assertEquals(2561, count);
     }
 
     @Test
@@ -31,7 +31,7 @@ public class FrameNetTest {
                 count += frameNet.getFrame(i).getLexicalUnit(j).size();
             }
         }
-        assertEquals(9674, count);
+        assertEquals(10476, count);
     }
 
     @Test
@@ -44,7 +44,7 @@ public class FrameNetTest {
                 }
             }
         }
-        assertEquals(192, elements.size());
+        assertEquals(203, elements.size());
     }
 
 }
