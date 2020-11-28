@@ -7,8 +7,7 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.ArrayList;
 
 public class Frame {
@@ -56,6 +55,15 @@ public class Frame {
         return null;
     }
 
+    public void removeLexicalUnit(LexicalUnit toBeRemoved){
+        for (LexicalUnit lexicalUnit : lexicalUnits){
+            if (lexicalUnit.getSynSetId().equals(toBeRemoved.getSynSetId())){
+                lexicalUnits.remove(lexicalUnit);
+                break;
+            }
+        }
+    }
+
     public LexicalUnit getLexicalUnit(int index){
         return lexicalUnits.get(index);
     }
@@ -66,5 +74,20 @@ public class Frame {
 
     public String getName(){
         return name;
+    }
+
+    public void save(String folder){
+        PrintWriter output;
+        try {
+            output = new PrintWriter(new File(folder + name + ".xml"));
+            output.println("<FRAME>");
+            for (LexicalUnit lexicalUnit : lexicalUnits){
+                lexicalUnit.save(output);
+            }
+            output.print("</FRAME>");
+            output.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }

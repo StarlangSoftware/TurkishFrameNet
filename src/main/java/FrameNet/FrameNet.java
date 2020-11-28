@@ -50,4 +50,10 @@ public class FrameNet {
         return frames.get(index);
     }
 
+    public void save(String folder){
+        for (Frame frame : frames){
+            frame.save(folder);
+        }
+    }
+
 }

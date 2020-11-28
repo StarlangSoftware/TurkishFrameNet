@@ -2,6 +2,7 @@ package FrameNet;
 
 import org.w3c.dom.Node;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class LexicalUnit {
@@ -32,5 +33,13 @@ public class LexicalUnit {
 
     public ArrayList<String> getFrameElements(){
         return frameElements;
+    }
+
+    public void save(PrintWriter output){
+        output.println("<LEXICALUNIT ID=\"" + synSetId + "\">");
+        for (String frameElement : frameElements){
+            output.println("<ELEMENT>" + frameElement + "</ELEMENT>");
+        }
+        output.println("</LEXICALUNIT>");
     }
 }
