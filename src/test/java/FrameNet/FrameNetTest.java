@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 
 public class FrameNetTest {
     FrameNet frameNet = new FrameNet();
-
+    
     @Test
     public void testFrameSize() {
         assertEquals(139, frameNet.size());
@@ -18,7 +18,7 @@ public class FrameNetTest {
     public void testLexicalUnitSize() {
         int count = 0;
         for (int i = 0; i < frameNet.size(); i++){
-            count += frameNet.getFrame(i).size();
+            count += frameNet.getFrame(i).lexicalUnitSize();
         }
         assertEquals(2561, count);
     }
@@ -27,21 +27,17 @@ public class FrameNetTest {
     public void testFrameElementSize() {
         int count = 0;
         for (int i = 0; i < frameNet.size(); i++){
-            for (int j = 0; j < frameNet.getFrame(i).size(); j++) {
-                count += frameNet.getFrame(i).getLexicalUnit(j).size();
-            }
+            count += frameNet.getFrame(i).frameElementSize();
         }
-        assertEquals(10476, count);
+        assertEquals(915, count);
     }
 
     @Test
     public void testDistinctFrameElements() {
         HashSet<String> elements = new HashSet<>();
         for (int i = 0; i < frameNet.size(); i++){
-            for (int j = 0; j < frameNet.getFrame(i).size(); j++) {
-                for (String element : frameNet.getFrame(i).getLexicalUnit(j).getFrameElements()){
-                    elements.add(element);
-                }
+            for (int j = 0; j < frameNet.getFrame(i).frameElementSize(); j++){
+                elements.add(frameNet.getFrame(i).getFrameElement(j));
             }
         }
         assertEquals(203, elements.size());
