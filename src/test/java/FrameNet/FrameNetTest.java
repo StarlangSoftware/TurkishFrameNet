@@ -29,7 +29,7 @@ public class FrameNetTest {
         for (int i = 0; i < frameNet.size(); i++){
             count += frameNet.getFrame(i).frameElementSize();
         }
-        assertEquals(915, count);
+        assertEquals(1665, count);
     }
 
     @Test
@@ -40,7 +40,7 @@ public class FrameNetTest {
                 elements.add(frameNet.getFrame(i).getFrameElement(j));
             }
         }
-        assertEquals(203, elements.size());
+        assertEquals(289, elements.size());
     }
 
 }
