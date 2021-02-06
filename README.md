@@ -1,7 +1,7 @@
 For Developers
 ============
 
-You can also see [Python](https://github.com/starlangsoftware/TurkishFrameNet-Py), [Cython](https://github.com/starlangsoftware/TurkishFrameNet-Cy), [C++](https://github.com/starlangsoftware/TurkishFrameNet-CPP), or [C#](https://github.com/starlangsoftware/TurkishFrameNet-CS) repository.
+You can also see [Python](https://github.com/starlangsoftware/TurkishFrameNet-Py), [Cython](https://github.com/starlangsoftware/TurkishFrameNet-Cy), [C++](https://github.com/starlangsoftware/TurkishFrameNet-CPP), [C#](https://github.com/starlangsoftware/TurkishFrameNet-CS), or [Swift](https://github.com/starlangsoftware/TurkishFrameNet-Swift) repository.
 
 ## Requirements
 
