@@ -96,3 +96,12 @@ Use below line to generate jar file:
             <artifactId>FrameNet</artifactId>
             <version>1.0.6</version>
         </dependency>
+
+# Cite
+
+	@inproceedings{marsan20,
+ 	title = {{B}uilding the {T}urkish {F}rame{N}et},
+ 	year = {2021},
+ 	author = {B. Marsan and N. Kara and M. Ozcelik and B. N. Arican and N. Cesur and A. Kuzgun and E. Saniyar and O. Kuyrukcu and O. T. Y{\i}ld{\i}z},
+ 	booktitle = {Proceedings of GWC 2021}
+	}
