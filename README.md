@@ -101,13 +101,13 @@ Detailed Description
 ============
 
 + [FrameNet](#framenet)
-+ [Frameset](#frameset)
++ [Frame](#frame)
 
 ## FrameNet
 
 FrameNet'i okumak ve tüm Frameleri hafızada tutmak için
 
-	a = FramesetNet();
+	a = FrameNet();
 
 Frameleri tek tek gezmek için
 
