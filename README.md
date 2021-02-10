@@ -97,6 +97,38 @@ Use below line to generate jar file:
             <version>1.0.6</version>
         </dependency>
 
+Detailed Description
+============
+
++ [FrameNet](#framenet)
++ [Frameset](#frameset)
+
+## FrameNet
+
+FrameNet'i okumak ve tüm Frameleri hafızada tutmak için
+
+	a = FramesetNet();
+
+Frameleri tek tek gezmek için
+
+	for (int i = 0; i < a.size(); i++){
+		Frame frame = a.getFrame(i);
+	}
+
+Bir fiile ait olan Frameleri bulmak için
+
+	frames = a.getFrames("TUR10-1234560")
+
+## Frame
+
+Bir framein lexical unitlerini getirmek için
+
+	String getLexicalUnit(int index)
+		
+Bir framein frame elementlerini getirmek için
+
+	String getFrameElement(int index)
+
 # Cite
 
 	@inproceedings{marsan20,
