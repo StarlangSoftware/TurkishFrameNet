@@ -1,17 +1,10 @@
 package FrameNet;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
+import Xml.XmlDocument;
+import Xml.XmlElement;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class FrameNet {
 
@@ -25,42 +18,26 @@ public class FrameNet {
         frames = new ArrayList<Frame>();
         ClassLoader classLoader = ClassLoader.getSystemClassLoader();
         InputStream inputStream = classLoader.getResourceAsStream("framenet.xml");
-        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-        try {
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(inputStream, "UTF-8");
-            NodeList nodeList = doc.getElementsByTagName("FRAME");
-            for (int i = 0; i < nodeList.getLength(); i++) {
-                Node frameNode = nodeList.item(i);
-                String name = frameNode.getAttributes().getNamedItem("NAME").getNodeValue();
-                Frame frame = new Frame(name);
-                Node childNode = frameNode.getFirstChild();
-                while (childNode != null){
-                    if (childNode.getNodeName().equals("LEXICAL_UNITS")){
-                        Node lexicalNode = childNode.getFirstChild();
-                        while (lexicalNode != null){
-                            if (lexicalNode.getNodeName().equals("LEXICAL_UNIT")){
-                                frame.addLexicalUnit(lexicalNode.getFirstChild().getNodeValue());
-                            }
-                            lexicalNode = lexicalNode.getNextSibling();
-                        }
-                    } else {
-                        if (childNode.getNodeName().equals("FRAME_ELEMENTS")){
-                            Node elementNode = childNode.getFirstChild();
-                            while (elementNode != null){
-                                if (elementNode.getNodeName().equals("FRAME_ELEMENT")){
-                                    frame.addFrameElement(elementNode.getFirstChild().getNodeValue());
-                                }
-                                elementNode = elementNode.getNextSibling();
-                            }
-                        }
-                    }
-                    childNode = childNode.getNextSibling();
-                }
-                frames.add(frame);
+        XmlDocument doc = new XmlDocument(inputStream);
+        doc.parse();
+        XmlElement frameNet = doc.getFirstChild();
+        XmlElement frameNode = frameNet.getFirstChild();
+        while (frameNode != null){
+            Frame currentFrame = new Frame(frameNode.getAttributeValue("NAME"));
+            XmlElement lexicalUnits = frameNode.getFirstChild();
+            XmlElement lexicalUnit = lexicalUnits.getFirstChild();
+            while (lexicalUnit != null){
+                currentFrame.addLexicalUnit(lexicalUnit.getPcData());
+                lexicalUnit = lexicalUnit.getNextSibling();
             }
-        } catch (ParserConfigurationException | SAXException | IOException e) {
-            e.printStackTrace();
+            XmlElement frameElements = lexicalUnits.getNextSibling();
+            XmlElement frameElement = frameElements.getFirstChild();
+            while (frameElement != null){
+                currentFrame.addFrameElement(frameElement.getPcData());
+                frameElement = frameElement.getNextSibling();
+            }
+            frames.add(currentFrame);
+            frameNode = frameNode.getNextSibling();
         }
     }
 
