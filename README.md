@@ -26,7 +26,7 @@ Class Diagram
 For Developers
 ============
 
-You can also see [Python](https://github.com/starlangsoftware/TurkishFrameNet-Py), [Cython](https://github.com/starlangsoftware/TurkishFrameNet-Cy), [C++](https://github.com/starlangsoftware/TurkishFrameNet-CPP), [C#](https://github.com/starlangsoftware/TurkishFrameNet-CS), [Js](https://github.com/starlangsoftware/TurkishFrameNet-Js), or [Swift](https://github.com/starlangsoftware/TurkishFrameNet-Swift) repository.
+You can also see [Python](https://github.com/starlangsoftware/TurkishFrameNet-Py), [Cython](https://github.com/starlangsoftware/TurkishFrameNet-Cy), [C++](https://github.com/starlangsoftware/TurkishFrameNet-CPP), [C](https://github.com/starlangsoftware/TurkishFrameNet-C), [C#](https://github.com/starlangsoftware/TurkishFrameNet-CS), [Js](https://github.com/starlangsoftware/TurkishFrameNet-Js), or [Swift](https://github.com/starlangsoftware/TurkishFrameNet-Swift) repository.
 
 ## Requirements
 
