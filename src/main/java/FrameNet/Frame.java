@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Frame {
 
-    private String name;
-    private ArrayList<String> lexicalUnits;
-    private ArrayList<String> frameElements;
+    private final String name;
+    private final ArrayList<String> lexicalUnits;
+    private final ArrayList<String> frameElements;
 
     /**
      * Constructor of {@link Frame} class which takes inputStream as input and reads the frame

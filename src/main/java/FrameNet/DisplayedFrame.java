@@ -3,8 +3,8 @@ package FrameNet;
 import java.util.Objects;
 
 public class DisplayedFrame {
-    private Frame frame;
-    private String lexicalUnit;
+    private final Frame frame;
+    private final String lexicalUnit;
 
     public DisplayedFrame(Frame frame, String lexicalUnit) {
         this.frame = frame;

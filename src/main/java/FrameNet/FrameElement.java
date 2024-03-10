@@ -2,7 +2,7 @@ package FrameNet;
 
 public class FrameElement {
 
-    private String frameElementType;
+    private final String frameElementType;
     private String frame;
     private String id;
 

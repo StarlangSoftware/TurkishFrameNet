@@ -8,14 +8,14 @@ import java.util.ArrayList;
 
 public class FrameNet {
 
-    private ArrayList<Frame> frames;
+    private final ArrayList<Frame> frames;
 
     /**
      * A constructor of {@link FrameNet} class which reads all frame files inside the files2.txt file. For each
      * filename inside that file, the constructor creates a FrameNet.Frame and puts in inside the frames {@link ArrayList}.
      */
     public FrameNet(){
-        frames = new ArrayList<Frame>();
+        frames = new ArrayList<>();
         ClassLoader classLoader = ClassLoader.getSystemClassLoader();
         InputStream inputStream = classLoader.getResourceAsStream("framenet.xml");
         XmlDocument doc = new XmlDocument(inputStream);
