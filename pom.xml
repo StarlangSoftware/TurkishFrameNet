@@ -10,8 +10,8 @@
 
     <packaging>jar</packaging>
 
-    <name>NlpToolkit.FrameNet.FrameNet</name>
-    <description>Turkish FrameNet.FrameNet</description>
+    <name>NlpToolkit.FrameNet</name>
+    <description>Turkish FrameNet</description>
     <url>https://github.com/StarlangSoftware/FrameNet</url>
 
     <organization>
@@ -29,7 +29,7 @@
     <developers>
         <developer>
             <name>Olcay Taner Yildiz</name>
-            <email>olcaytaner@isikun.edu.tr</email>
+            <email>olcay.yildiz@ozyegin.edu.tr</email>
             <organization>Starlang Software</organization>
             <organizationUrl>http://www.starlangyazilim.com</organizationUrl>
         </developer>
@@ -38,7 +38,7 @@
     <scm>
         <connection>scm:git:git://github.com/starlangsoftware/framenet.git</connection>
         <developerConnection>scm:git:ssh://github.com:starlangsoftware/framenet.git</developerConnection>
-        <url>http://github.com/starlangsoftware/math/tree/master</url>
+        <url>http://github.com/starlangsoftware/framenet/tree/master</url>
     </scm>
 
     <properties>
