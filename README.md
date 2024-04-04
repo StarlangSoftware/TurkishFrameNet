@@ -104,7 +104,7 @@ Use below line to generate jar file:
         <dependency>
             <groupId>io.github.starlangsoftware</groupId>
             <artifactId>FrameNet</artifactId>
-            <version>1.0.6</version>
+            <version>1.0.8</version>
         </dependency>
 
 Detailed Description
