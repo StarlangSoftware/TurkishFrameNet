@@ -41,6 +41,11 @@ public class FrameNet {
         }
     }
 
+    /**
+     * Checks if the given lexical unit exists in any frame in the frame set.
+     * @param synSetId Id of the lexical unit
+     * @return True if any frame contains the given lexical unit, false otherwise.
+     */
     public boolean lexicalUnitExists(String synSetId){
         for (Frame frame : frames){
             if (frame.lexicalUnitExists(synSetId)){
@@ -50,6 +55,11 @@ public class FrameNet {
         return false;
     }
 
+    /**
+     * Returns an array of frames that contain the given lexical unit in their lexical units
+     * @param synSetId Id of the lexical unit.
+     * @return An array of frames that contains the given lexical unit.
+     */
     public ArrayList<Frame> getFrames(String synSetId){
         ArrayList<Frame> result = new ArrayList<>();
         for (Frame frame : frames){
@@ -60,10 +70,19 @@ public class FrameNet {
         return result;
     }
 
+    /**
+     * Returns number of frames in the frame set.
+     * @return Number of frames in the frame set.
+     */
     public int size(){
         return frames.size();
     }
 
+    /**
+     * Returns the element at the specified position in the frame list.
+     * @param index index of the element to return
+     * @return The element at the specified position in the frame list.
+     */
     public Frame getFrame(int index){
         return frames.get(index);
     }
