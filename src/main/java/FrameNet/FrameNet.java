@@ -72,7 +72,7 @@ public class FrameNet {
 
     /**
      * Returns number of frames in the frame set.
-     * @return Number of frames in the frame set.
+     * @return Numbe of frames in the frame set.
      */
     public int size(){
         return frames.size();
