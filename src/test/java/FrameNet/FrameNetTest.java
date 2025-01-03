@@ -20,7 +20,7 @@ public class FrameNetTest {
         for (int i = 0; i < frameNet.size(); i++){
             count += frameNet.getFrame(i).lexicalUnitSize();
         }
-        assertEquals(8489, count);
+        assertEquals(8493, count);
     }
 
     @Test
