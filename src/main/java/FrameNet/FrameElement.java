@@ -77,4 +77,12 @@ public class FrameElement {
         }
     }
 
+    /**
+     * Setter for the id
+     * @param id New id of the frame element
+     */
+    public void setId(String id) {
+        this.id = id;
+    }
+
 }
